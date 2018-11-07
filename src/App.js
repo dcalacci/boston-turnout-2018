@@ -39,11 +39,8 @@ class App extends Component {
             isLayerChecked: true
         },
         turnout: {
-            isLayerChecked: false
+            isLayerChecked: true
         },
-        orange: {
-            isLayerChecked: false
-        }
     }
 
     handleSlider = (event, value) => {
@@ -99,9 +96,9 @@ class App extends Component {
                       />
                   </Source>
                   <Basemap
-                    isLayerChecked={this.state.orange.isLayerChecked}
                     />
                 </Map>
+                <div className="controls">
                 <OpacitySlider
                   handleSlider={this.handleSlider}
                   sliderValue={this.state.sliderValue}
@@ -119,12 +116,7 @@ class App extends Component {
                     checked={this.state.turnout.isLayerChecked}
                     value='turnout'
                     />
-                  <Checkbox
-                    label='Paint water orange'
-                    onCheck={this.handleCheckbox}
-                    checked={this.state.orange.isLayerChecked}
-                    value='orange'
-                    />
+                </div>
                 </div>
               </div>
             </MuiThemeProvider>

@@ -2,6 +2,7 @@ import React from 'react'
 import { Component, PropTypes } from 'react'
 import merge from 'lodash.merge'
 import MapboxGl from 'mapbox-gl/dist/mapbox-gl.js'
+import _ from 'underscore';
 
 export default class PopUp extends Component {
 
@@ -45,24 +46,35 @@ export default class PopUp extends Component {
     renderToolTip() {
         const features = this.state.features;
 
+        let features2 = _.filter(features, (f) => {
+            return f.layer.id === 'sourceID-fill-layer';
+        });
+
+        if (features2.length === 0) {
+            return null;
+        }
+
         const renderFeature = (feature, i) => {
-            return (
-                <div key={i}>
-                  <strong className='mr3'>
-                    {feature.PRECINCT}
-                  </strong>
-                  <strong className='mr3'>
-                    {feature.turnout}%
-                  </strong>
-                </div>
-            );
+                let ward = feature.properties.WARD_PRECI.slice(0,2);
+                let precinct = feature.properties.PRECINCT;
+            return (`<div key=${i}> \
+                  <p className='mr3'> \
+                    <strong>Ward:</strong> ${ward}\
+                  </p> \
+                  <p className='mr3'> \
+                    <strong>Precinct:</strong>${precinct} \
+                  </p> \
+                  <p className='mr3'> \
+                    <strong>Turnout:</strong>${feature.properties.turnout}% \
+                  </p> \
+                </div> \
+            `);
         };
 
-        let toRender = (<div>
-                {features.map(renderFeature)}
-                        </div>);
+        let toRender = (`<div> \
+                ${features2.map(renderFeature)}
+                        </div>`);
 
-        console.log(toRender);
         return toRender;
     };
 
