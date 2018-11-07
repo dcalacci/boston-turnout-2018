@@ -1,1 +1,5 @@
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+# Boston Turnout 2018
+
+Using mapbox.gl and react
+
+
