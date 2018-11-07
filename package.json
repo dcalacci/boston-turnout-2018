@@ -1,6 +1,6 @@
 {
-  "name": "spa-mapbox",
-  "homepage": "http://alicer.github.io/react-mapboxgl-example",
+  "name": "boston-turnout",
+  "homepage": "http://www.bostonturnout.com",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
