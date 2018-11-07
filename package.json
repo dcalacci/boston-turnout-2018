@@ -8,6 +8,7 @@
     "react-scripts": "^0.8.5"
   },
   "dependencies": {
+    "csvtojson": "^2.0.8",
     "lodash": "^4.17.11",
     "lodash.merge": "^4.6.1",
     "mapbox-gl": "^0.51.0-beta.2",
