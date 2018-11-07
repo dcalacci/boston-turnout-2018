@@ -38,6 +38,14 @@ class Map extends Component {
         )
     }
 
+    // render () {
+    //     return ()<Map
+    //     container={this.container}
+    //     containerStyle={{height: "30vh",
+    //                      width: "80vw"}}
+    //     style='mapbox://styles/mapbox/light-v9'>
+    //         </Map>
+    // }
     render() {
         const { children } = this.props
         const { map } = this.state
@@ -45,7 +53,7 @@ class Map extends Component {
             <div className='Map' ref={(x) => { this.container = x }}>
               { map && children }
             </div>
-        )
+        );
     }
 }
 

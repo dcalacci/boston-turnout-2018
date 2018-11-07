@@ -4,9 +4,8 @@ import injectTapEventPlugin from 'react-tap-event-plugin'
 // http://stackoverflow.com/a/34015469/988941
 injectTapEventPlugin()
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-
-import Map from './Map'
 import Popup from './Popup';
+import Map from './Map'
 import Source from './Source'
 import Layer from './Layer'
 import Basemap from './Basemap'
@@ -73,6 +72,7 @@ class App extends Component {
                     type='geojson'
                     layer='precinct-data'
                     >
+                    <Popup/>
                     <Layer
                       id='line-layer'
                       type='line'
